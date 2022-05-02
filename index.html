@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p5</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+		integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+	<style>
+		canvas{
+			transform: scale(10) translate(0%,0%);
+			position: absolute;
+			left: 50vw;
+			top: 50vh;
+		}
+	</style>
+	<script>
+		let imgs = []
+			, str = ""
+		function path(n) {
+			return '/frame' + String(n).padStart(5, '0') + '.png'
+		}
+		function preload() {
+			Array(433).fill(0).forEach((_, i) => {
+				img(i + 1)
+			})
+		}
+		function setup() {
+			createCanvas(55, 35)
+		}
+		function draw() {
+			//image(imgs[floor((frameCount/10)%imgs.length)],0,0)
+			if(frameCount-1>=imgs.length){}else{
+				read(imgs[frameCount-1],frameCount-1)
+			}
+		}
+		function read(im,ee) {//image -> string
+			console.log(ee)
+			// im is the p5.Image
+			// ee does not matter here
+			for (let y = 0; y < 30; y++) {
+				for (let x = 0; x < 50; x++) {
+					const px = im.get(x, y)
+					//px is an array of numbers, [rValue, gValue, bValue, transparencyValue]
+					if (px[0] > 127) {
+						str += "1"
+					} else {
+						str += "0"
+					}
+				}
+			}
+		}
+		function img(nm) {
+			imgs.push(loadImage("frames" + path(nm)))
+		}
+	</script>
+</body>
+
+</html>
