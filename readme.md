@@ -20,4 +20,4 @@ or skip steps 1-9 and get the premade big string from [here](str.txt)
 
 or for the ~8fps version use [this](S2.txt)
 
-[here's an example using the 8fps string, "Bad apple but it's HTML checkboxes"](https://htmlpreview.github.io/?https://github.com/Electogenius/hs-bad-apple/blob/main/checkbox.html)
+[here's an example using the 8fps string, "Bad apple but it's HTML checkboxes"](//electogenius.github.io/hs-bad-apple/checkbox)
