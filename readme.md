@@ -6,7 +6,7 @@ how to run:
 ```sh
 #0. clone this repo to your computer (duh)
 #1. get every video frame into a folder named 'framesOG', 6506 frames in this case
-deno run -A deno.js			 #2. slow down to 2fps and store in a folder called 'frames'
+deno run -A deno.js			 #2. slow down and store in a folder called 'frames'
 automator compress1.workflow #3. scale all images in the 'frames' folder to 50x30 (only works on mac, otherwise use another program)
 python -m http.serve 3900	 #4. serve the html file
 open http://localhost:3900	 #5. open in browser
@@ -18,3 +18,6 @@ open http://localhost:3900	 #5. open in browser
 ```
 or skip steps 1-9 and get the premade big string from [here](str.txt)
 
+or for the ~8fps version use [this](S2.txt)
+
+[here's an example using the 8fps string, "Bad apple but it's HTML checkboxes"](https://htmlpreview.github.io/?https://github.com/Electogenius/hs-bad-apple/blob/main/checkbox.html)
